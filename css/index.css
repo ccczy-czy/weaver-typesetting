@@ -1,0 +1,25 @@
+body {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    background-color: #FAC898;
+    background-image: repeating-linear-gradient(223deg, rgba(255,255,255, 0.25), rgba(255,255,255, 0.25) 2px, transparent 0px, transparent 3px);
+    padding: 30px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+  
+.upperDiv {
+    line-height: normal;
+    flex: 1;
+    height: 100px;
+    margin: 10px;
+    background-color: #f2f2f2;
+}
+
+.weft {
+    border: 2px solid teal;
+}
+
+  
