@@ -1,51 +1,3 @@
-// const upperDivs = document.querySelectorAll('.upperDiv');
-// const textBoxes = document.querySelectorAll('.text');
-// const ruler = document.getElementById('ruler');
-
-// let isDragging = false;
-// let prevY = 0;
-
-// ruler.addEventListener('mousedown', startDragging);
-// document.addEventListener('mousemove', handleDragging);
-// document.addEventListener('mouseup', stopDragging);
-
-// function startDragging(e) {
-//   isDragging = true;
-//   prevY = e.clientY;
-// }
-
-// function handleDragging(e) {
-//   if (!isDragging) return;
-  
-//   const deltaY = prevY - e.clientY;
-//   prevY = e.clientY;
-  
-//   const height = upperDivs[0].offsetHeight;
-//   const newHeight = height - deltaY;
-
-//   const lineHeight = parseFloat(getComputedStyle(upperDivs[0]).lineHeight);
-//   const direction = height < newHeight ? 1 : -1;
-
-//   const deltaLineHeight = newHeight * 0.002 * direction;
-//   const newLineHeight = lineHeight + deltaLineHeight;
-  
-//   if (newHeight < 0) {
-//     upperDivs.forEach(upperDiv => {
-//       upperDiv.style.height = '0';
-//       upperDiv.style.lineHeight = 0.1;
-//     });
-//   } else {
-//     upperDivs.forEach(upperDiv => {
-//       upperDiv.style.height = newHeight + 'px';
-//       upperDiv.style.lineHeight = Math.min(newLineHeight, 24.96) + 'px';
-//     });
-//   }
-// }
-
-// function stopDragging() {
-//   isDragging = false;
-// }
-
 const onresize = (dom_elem, callback) => {
   const resizeObserver = new ResizeObserver(callback);
   resizeObserver.observe(dom_elem);
@@ -76,5 +28,10 @@ cols.forEach((item) => {
       box.style.height = item.style.height;
       box.style.lineHeight = newLineHeight + 'px';
     });
+  });
+
+  item.addEventListener('input', () => {
+    item.style.height = 'auto';
+    item.style.height = item.scrollHeight + 'px';
   });
 });
